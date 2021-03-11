@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :cars
+  
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  
+  
+  
+  # resources :cars
   resources :comments
   resources :users
   resources :reviews
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end
