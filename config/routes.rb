@@ -7,14 +7,20 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  
+
   delete '/logout' => 'sessions#destroy'
   
   
   
   # resources :cars
   resources :comments
-  resources :users
-  resources :reviews
+  resources :users do 
+    resources :posts, only: [:new, :create, :index]
+  end
+
+  resources :reviews do
+    resources :comments
+  end
+
   
 end
