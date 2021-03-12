@@ -1,2 +1,14 @@
-<h1>delete reviews</h1>
+<h1><%= @review.title %></h1>
+<h2>By: <%= @review.user.username %></h2>
 
+<div><%= @review.content %></div>
+
+
+<p><%= link_to "See all Comments", review_comments_path(@review) %></p>
+<p><%= link_to "Add a new Comment", new_review_comments_path(@review) %></p>
+
+<h4>Comments:</h4>
+<% @review.comments.each do |t| %>
+<li><strong><%= t.user.username %> says "<%= link_to t.content, comment_path(t)%>"</li>
+
+<% end %>

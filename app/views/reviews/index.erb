@@ -1,10 +1,10 @@
-<h1>All Reviews<h1>
+<h1>All Car Reviews<h1>
 <table>
 <tbody>
-<%= @reviews.each do |t|%>
+<% @reviews.each do |t|%>
 <tr>
 <td><%= t.title %></td>
-<td><%= t.content %></td>
+<td>By: <%= t.user.username %></td>
 <%# <%= button_to "Delete", t, method: :delete %> 
 </tr>
 

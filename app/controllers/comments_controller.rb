@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        if params[:post_id] && @post = Post.find_by_id(:post_id)
+        if params[:post_id] && @post = Post.find_by_id(params[:post_id])
             @comments = @post.comments
         else
         @comments = Comment.all
