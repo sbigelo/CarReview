@@ -1,0 +1,36 @@
+<% if @comment.review %>
+<h1>Comment for <%= @comment.review.title %></h1>
+<% else %>
+<h1>New Comment</h1>
+<% end %>
+
+
+
+<% if @comment.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+    <ul>
+      <% @comment.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_for([@comment.review, @comment]) do |t| %>
+<% if !@comment.review %>
+<%= t.label :review, "Review: " %>
+<%= t.collection_select :review_id, Review.all, :id, :title %>
+<% else %>
+<%= t.hidden_field :review_id %>
+<% end %>
+<br><br>
+<%= t.label :content, "Comment: " %>
+<%= t.text_area :content %>
+<br>
+<%= t.submit "Submit Comment"%>
+
+
+<% end %>

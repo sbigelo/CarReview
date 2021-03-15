@@ -5,7 +5,7 @@
 
 
 <p><%= link_to "See all Comments", review_comments_path(@review) %></p>
-<p><%= link_to "Add a new Comment", new_review_comments_path(@review) %></p>
+<p><%= link_to "Add a new Comment", new_review_comment_path(@review) %></p>
 
 <h4>Comments:</h4>
 <% @review.comments.each do |t| %>
