@@ -1,16 +1,23 @@
 class ReviewsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
+
+    def new
+        @review = Review.new
+    end
+
     def index
-        @reviews = Review.all
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @reviews = @user.reviews
+        else
+            @error = "That review does not exist." if params[:user_id]
+            @reviews = Review.all
+        end
     end
 
     def show
         @review = Review.find(params[:id])
-    end
-
-    def new
-        @review = Review.new
+        redirect_to reviews_path if !@review
     end
 
     def create

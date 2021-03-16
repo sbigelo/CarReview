@@ -6,11 +6,6 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
-    def index
-
-    end
-    
-
     def create
         @user = User.new(user_params) 
         if @user.save
@@ -20,6 +15,16 @@ class UsersController < ApplicationController
             render :new
         end
     end
+
+    def index
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @comments = @user.comments
+        else
+            @error = "That user does not exist." if params[:user_id]
+            @reviews = Review.all
+        end
+    end
+    
 
     def show
         redirect_if_not_logged_in
