@@ -9,6 +9,6 @@
 
 <h4>Comments:</h4>
 <% @review.comments.each do |t| %>
-<li><strong><%= t.user.username %> says "<%= link_to t.content, comment_path(t)%>"</li>
+<li><strong><%= t.user.username %> says "<%= link_to t.content, review_comments_path(@review, t)%>"</li>
 
 <% end %>

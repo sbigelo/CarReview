@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # resources :cars
   resources :comments
   resources :users do 
-    resources :posts, only: [:new, :create, :index]
+    resources :reviews, only: [:new, :create, :index]
   end
 
   resources :reviews do
