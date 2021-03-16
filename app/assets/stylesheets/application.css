@@ -16,7 +16,16 @@
 
  .home {
      text-align: center;
+ }
+
+ .home a:visited { 
+    text-decoration: none; 
+    color: black; 
+}
+
+ .home a {
      font-size: 90px;
+     text-decoration:none;
  }
 .links {
     text-align: right;
