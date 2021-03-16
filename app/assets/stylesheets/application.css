@@ -16,6 +16,7 @@
 
  .home {
      text-align: center;
+     font-family: unset;
  }
 
  .home a:visited { 
@@ -33,4 +34,8 @@
 }
 .welcome {
     text-align: center;
+}
+
+body {
+    background-color: rgb(152, 20, 20);
 }

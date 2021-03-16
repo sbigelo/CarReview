@@ -12,6 +12,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
+
             render :new
         end
     end
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @comments = @user.comments
         else
-            @error = "That user does not exist." if params[:user_id]
+            flash[:message] = "That user does not exist." if params[:user_id]
             @reviews = Review.all
         end
     end
