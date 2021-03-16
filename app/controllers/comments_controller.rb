@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
         if !@comment
       flash[:message] = "Comment was not found"
       redirect_to comments_path
-    end
+        end
     end
 
     def edit
