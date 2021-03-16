@@ -12,7 +12,11 @@
 
   <body>
   <br> 
-  <div>
+  <div class="home">
+  <%= link_to "Home", root_path %>
+  </div>
+  <br>
+  <div class="links">
   <% if logged_in? %>
   <%= link_to "Write a new Review", new_review_path %> |
   <%= link_to "All Reviews", reviews_path %> |

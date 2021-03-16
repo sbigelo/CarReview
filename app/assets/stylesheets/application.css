@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ .home {
+     text-align: center;
+     font-size: 90px;
+ }
+.links {
+    text-align: right;
+    font-size: 25px;
+}
+.welcome {
+    text-align: center;
+}
