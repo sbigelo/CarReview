@@ -54,3 +54,28 @@ body .link {
     margin: 10px;
    
 }
+
+.content {
+  resize: none;
+  margin-left: 33.3%;
+  padding: 8px;
+  border: 2px solid #030403;
+  height: auto;
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+  
+}
+
+html, body {
+        width: 100%;
+}
+
+table tbody tr{
+ margin: 0;
+  height: 7vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

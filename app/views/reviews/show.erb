@@ -1,7 +1,7 @@
 <h1><%= @review.title %></h1>
 <h2>By: <%= @review.user.username %></h2>
 
-<div><%= @review.content %></div>
+<div class="content"><%= @review.content %></div>
 
 
 <p><%= link_to "See all Comments", review_comments_path(@review) %></p>
