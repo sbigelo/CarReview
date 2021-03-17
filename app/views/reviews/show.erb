@@ -4,11 +4,16 @@
 <div class="content"><%= @review.content %></div>
 
 
-<p><%= link_to "See all Comments", review_comments_path(@review) %></p>
-<p><%= link_to "Add a new Comment", new_review_comment_path(@review) %></p>
 
+<p><%= link_to "Add a new Comment", new_review_comment_path(@review) %></p><br>
+<% if !@review.comments.empty? %>
+<div>
 <h4>Comments:</h4>
 <% @review.comments.each do |t| %>
-<li><strong><%= t.user.username %> says "<%= link_to t.content, review_comments_path(@review, t)%>"</li>
-
+<p><strong><%= t.user.username %> says "<%= link_to t.content, review_comments_path(@review, t)%>"</p>
 <% end %>
+
+<% else %>
+<p><strong>No Comments have been made about <%= @review.title%> yet.</p>
+<% end %>
+</div>
