@@ -28,14 +28,29 @@
      font-size: 90px;
      text-decoration:none;
  }
-.links {
-    text-align: right;
-    font-size: 25px;
-}
+
 .welcome {
     text-align: center;
 }
 
 body {
-    background-color: rgb(152, 20, 20);
+    background-color: #b30a0a;
+    text-align: center;
+}
+
+body .links a{
+
+  border: 2px solid #030403;
+  padding: 8px;
+  text-align: right;
+  font-size: 18px;
+  
+}
+
+body .link {
+    background: green;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+   
 }

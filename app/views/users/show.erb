@@ -1,9 +1,9 @@
 <% if !@user.reviews.blank? %>
 <h1>Here are <%= @user.username%>'s reviews:</h1>
 <% @user.reviews.each do |t| %>
-<%= t.title %><br><br><br>
+<h2>Title: <%= t.title %></h2><br><br><br>
 <%= t.content %>
-<%= link_to %>
+<%= link_to "See all of their comments", review_comment_path(@user, t)%>
 <% end %>
 <% else %>
 <h1><%= @user.username %> has not made any reviews yet.</h1>
