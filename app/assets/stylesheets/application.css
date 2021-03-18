@@ -79,3 +79,8 @@ table tbody tr{
   justify-content: center;
   align-items: center;
 }
+
+.boxem {
+    margin-left: 33.3%;
+    margin-right: 33.3%;
+}

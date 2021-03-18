@@ -6,7 +6,7 @@ module ReviewsHelper
         elsif @user == current_user
             content_tag(:h1, "Welcome, #{@user.username}! Here are your reviews: ")
         else
-            content_tag(:h1, "Here are their reviews:")
+            content_tag(:h1, "Here are #{@user.username}'s reviews:")
         end
     end
 
