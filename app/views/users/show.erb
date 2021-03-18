@@ -5,8 +5,12 @@
 <br><h2><%= t.title %></h2><br>
 <div class="boxem">
 <%= t.content %><br><br><br><br>
+<% if t.comments.blank? %>
+<p>No Comments yet.</p>
+<% else %>
 <%= link_to "See the comments for #{t.title}", review_comment_path(@user, t)%>
 </div><br><br>
+<% end %>
 <% end %>
 
 

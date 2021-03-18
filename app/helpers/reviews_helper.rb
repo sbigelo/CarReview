@@ -2,7 +2,7 @@ module ReviewsHelper
 
     def show_reviews
         if @user.reviews.empty?
-            content_tag(:h1, "No Reviews have been made yet.")
+            content_tag(:h1, "No Reviews have been made by #{@user.username} yet.")
         elsif @user == current_user
             content_tag(:h1, "Welcome, #{@user.username}! Here are your reviews: ")
         else
