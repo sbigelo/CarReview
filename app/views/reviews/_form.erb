@@ -1,0 +1,12 @@
+<%= form_for(@review) do |t| %>
+
+<%= t.label :title, "Title: " %>
+<%= t.text_field :title %>
+<br><br>
+<%= t.label :content, "Review: " %>
+<%= t.text_area :content %>
+<br><br>
+<%= t.submit "Submit"%>
+
+
+<% end %>
