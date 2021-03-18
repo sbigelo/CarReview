@@ -10,17 +10,17 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
   
-  
+  resources :reviews do
+    resources :comments
+  end
   
   # resources :cars
   resources :comments
   resources :users do 
-    resources :reviews, only: [:new, :create, :index]
+    resources :reviews, shallow: true
   end
 
-  resources :reviews do
-    resources :comments
-  end
+
 
   
 end

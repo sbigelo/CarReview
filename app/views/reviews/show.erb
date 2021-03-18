@@ -1,4 +1,4 @@
-<h1><%= @review.title %></h1>
+<h1>Title: <%= @review.title %></h1>
 <h2>By: <%= @review.user.username %></h2>
 
 <div class="content"><%= @review.content %></div>
@@ -9,9 +9,10 @@
 <% if !@review.comments.empty? %>
 <div>
 <h4>Comments:</h4>
-<% @review.comments.each do |t| %>
-<p><strong><%= t.user.username %> says "<%= link_to t.content, review_comments_path(@review, t)%>"</p>
+<% @review.comments.first(3).each do |t| %>
+<p><strong><%= t.user.username %> says "<%= link_to t.content, review_comment_path(@review, t)%>"</p>
 <% end %>
+<p><%= link_to 'See all comments', review_comments_path(@review)%></p>
 
 <% else %>
 <p><strong>No Comments have been made about <%= @review.title%> yet.</p>

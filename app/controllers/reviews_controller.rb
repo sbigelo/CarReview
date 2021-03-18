@@ -34,8 +34,9 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        Review.find(params[:id]).destroy
-
+     @review = Review.find(params[:id])
+     @review.destroy
+         session.delete(:user_id)
     end
 
 
