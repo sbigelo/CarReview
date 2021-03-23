@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
-
+    before_action :set_comment, only: [:show, :edit, :update]
     def index
         if params[:review_id] && @review = Review.find_by_id(params[:review_id])
             @comments = @review.comments
@@ -29,16 +29,14 @@ class CommentsController < ApplicationController
     end
 
     def show
-        edit_or_show
+        
     end
 
     def edit
-        edit_or_show
+       
     end
 
     def update
-        @comment = Comment.find_by_id(params[:id])
-        redirect_to comments_path if !@comment || @comment.user != current_user
         if @comment.update(comment_params)
             redirect_to comment_path(@comment)
         else
@@ -53,13 +51,15 @@ class CommentsController < ApplicationController
         params.require(:comment).permit(:content, :review_id)
     end
 
-    def edit_or_show
+    def set_comment
         @comment = Comment.find_by(id: params[:id])
-            if !@comment
-                flash[:message] = "Comment was not found"
-                redirect_to comments_path
+        if !@comment
+            flash[:message] = "Comment was not found"
+            redirect_to comments_path
         end
     end
+
+    def 
 
 
 
