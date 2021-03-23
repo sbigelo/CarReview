@@ -84,3 +84,7 @@ table tbody tr{
     margin-left: 33.3%;
     margin-right: 33.3%;
 }
+
+.gray {
+    color: rgb(174, 174, 174);
+}
