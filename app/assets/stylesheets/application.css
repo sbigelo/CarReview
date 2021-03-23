@@ -88,3 +88,6 @@ table tbody tr{
 .gray {
     color: rgb(174, 174, 174);
 }
+.gray:focus {
+    color: black;
+}

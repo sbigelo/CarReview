@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
             @reviews = @user.reviews
         else
             @error = "That review does not exist." if params[:user_id]
-            @reviews = Review.all
+            @reviews = Review.all.abc
         end
     end
 

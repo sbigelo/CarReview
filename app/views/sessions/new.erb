@@ -5,7 +5,7 @@
 <br>
 <%= form_for :user do |f| %>
 <%= f.label :username %>
-<%= f.text_field :username, :value => "Case Sensitive", :class => "gray" %>
+<%= f.text_field :username, :placeholder => "Case Sensitive", :class => "gray", :onfocus => "this.value=''" %>
 <br><br>
 <%= f.label :password %>
 <%= f.password_field :password %>
