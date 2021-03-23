@@ -36,9 +36,9 @@ class ReviewsController < ApplicationController
 
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @reviews = @user.reviews
+            @reviews = @user.reviews.abc
         else
-            @error = "That review does not exist." if params[:user_id]
+           
             @reviews = Review.all.abc
         end
     end
