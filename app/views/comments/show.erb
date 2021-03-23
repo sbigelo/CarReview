@@ -1,8 +1,7 @@
-<%= flash[:message] if flash[:message]%>
-
-<h1><%= @comment.content%> - <%= @comment.user.username%></h1>
+<h2>"<%= @comment.content%>" - <%= @comment.user.username%></h2>
 
 <% if @comment.user == current_user %>
-<%= link_to "Edit this comment", edit_comment_path(@comment)%>
-
+  <%= link_to "Edit Comment", edit_comment_path(@comment)%>
 <% end %>
+
+<h4>Read the review here: <%= link_to @comment.review.title, review_path(@comment.review_id) %></h4>
