@@ -16,21 +16,11 @@ class UsersController < ApplicationController
             render :new
         end
     end
-
-    def index
-        if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @comments = @user.comments
-        else
-            flash[:message] = "That user does not exist." if params[:user_id]
-            @reviews = Review.all
-        end
-    end
     
 
     def show
         redirect_if_not_logged_in
         @user = User.find_by_id(params[:id])
-        redirect_to root_path if !@user
     end
 
     private
