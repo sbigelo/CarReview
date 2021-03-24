@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    before_action :redirect_if_not_logged_in, only: [:show] 
 
   
 
@@ -20,8 +20,10 @@ class UsersController < ApplicationController
     
 
     def show
-        redirect_if_not_logged_in
         @user = User.find_by_id(params[:id])
+        if !@user
+            redirect_to root_path, flash: {error: "That user does not exist."}
+        end
     end
 
     private
