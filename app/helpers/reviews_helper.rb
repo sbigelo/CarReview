@@ -14,7 +14,7 @@ module ReviewsHelper
         if @user
             content_tag(:h1, "#{@user.username}'s Reviews:")
         else
-            content_tag(:h2, "All Reviews")
+            content_tag(:h1, "All Reviews")
       end
     end
 

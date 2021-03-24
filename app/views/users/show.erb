@@ -4,8 +4,8 @@
 
 <% @user.reviews.each do |t| %>
 <br><h2><%= t.title %></h2><br>
-<div class="boxem">
-<%= t.content %><br><br>
+<div class="content">
+<%= t.content %></div><br><br>
 <% if t.user == current_user %>
   <%= link_to "Edit Review", edit_review_path(t)%>
 <% end %>
@@ -14,10 +14,9 @@
 <p>There aren't any Comments for the <%=t.title%> yet.</p>
 <% else %>
 <%= link_to "See all comments, including for the #{t.title}", comments_path%>
-</div><br><br>
+<br><br>
 <% end %>
 <% end %>
-<p>gggg</p>
 
 
 

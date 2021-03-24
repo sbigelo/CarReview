@@ -38,14 +38,16 @@ class ReviewsController < ApplicationController
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @reviews = @user.reviews.abc
         else
-           flash[:error] = "No reviews by that user."
             @reviews = Review.all.abc
         end
     end
 
     def show
         @review = Review.find_by_id(params[:id])
-        redirect_to reviews_path if !@review
+        if !@review 
+            flash[:error] = "That review does not exist."
+            redirect_to reviews_path
+        end
     end
 
     def destroy
