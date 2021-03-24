@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @reviews = @user.reviews.abc
         else
-            @reviews = Review.all.abc
+            @reviews = Review.most_comments
         end
     end
 

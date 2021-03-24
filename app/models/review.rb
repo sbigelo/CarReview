@@ -6,5 +6,7 @@ class Review < ApplicationRecord
   validates :content, :title, presence: true
 
   scope :abc, -> {order(:title)}
+  scope :most_comments, -> {left_outer_joins(:comments).group('reviews.id').order('count(reviews.id) desc')}
+
 
 end

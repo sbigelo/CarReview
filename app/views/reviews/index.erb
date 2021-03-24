@@ -8,12 +8,12 @@
 <tbody>
 <% @reviews.each do |t|%>
 <tr>
-<td><%= link_to t.title, review_path(t) %></td>
+<td><%= link_to t.title, review_path(t) %> - By: <%= link_to t.user.username, user_path(t.user) %> -</td>
 <td> </td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>By: <%= link_to t.user.username, user_path(t.user) %></td>
+<td><%= pluralize((t.comments.size), 'Comment') %></td>
 </tr>
 
 

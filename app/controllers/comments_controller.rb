@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :set_comment, only: [:show, :edit, :update]
+    
     def index
         if params[:review_id] && @review = Review.find_by_id(params[:review_id])
             @comments = @review.comments
