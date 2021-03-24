@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path
         else
-            flash[:message] = "Username and/or password is incorrect."
-            redirect_to '/login'
+            redirect_to login_path, flash: {error: "Username and/or password is incorrect."}
         end
     end
+
+    
 
     def destroy
         session.clear
