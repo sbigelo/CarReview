@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @reviews = @user.reviews.abc
         else
-           
+           flash[:error] = "No reviews by that user."
             @reviews = Review.all.abc
         end
     end

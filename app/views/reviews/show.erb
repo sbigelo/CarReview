@@ -4,7 +4,9 @@
 <div class="content"><%= @review.content %></div>
 
 
-
+<% if @review.user == current_user %>
+  <%= link_to "Edit Review", edit_review_path(@review)%>
+<% end %>
 <p><%= link_to "Add a new Comment", new_review_comment_path(@review) %></p><br>
 <% if !@review.comments.empty? %>
 <div>

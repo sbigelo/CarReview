@@ -1,5 +1,9 @@
 <%= index_head %>
-<%= flash[:error] if flash[:error]%>
+<%= flash[:error] if flash[:error] %>
+<% if @reviews.blank? %>
+<h2>No Reviews yet. Write one <%= link_to "here:", new_review_path %></h2>
+<% else %>
+
 <table>
 <tbody>
 <% @reviews.each do |t|%>
@@ -14,6 +18,7 @@
 </tr>
 
 
+<% end %>
 <% end %>
 </tbody>
 </table>
