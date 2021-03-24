@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
 
     def show
         @review = Review.find_by_id(params[:id])
-        if !@review 
+        if !@review
             flash[:error] = "That review does not exist."
             redirect_to reviews_path
         end
