@@ -11,7 +11,7 @@
 <% end %>
 <br><br><br><br>
 <% if t.comments.blank? %>
-<p>There aren't any Comments for the <%=t.title%> yet.</p>
+<p>There aren't any Comments for the <%=t.title%> yet. Add a comment <%= link_to "here", new_review_comment_path(t) %></p>
 <% else %>
 <%= link_to "See all comments, including for the #{t.title}", comments_path%>
 <br><br>
