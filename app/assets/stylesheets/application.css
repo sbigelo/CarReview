@@ -34,7 +34,7 @@
 }
 
 body {
-    background-color: #b30a0a;
+    background-color: rgb(105, 222, 214);
     text-align: center;
 }
 
@@ -48,7 +48,7 @@ body .links a{
 }
 
 body .link {
-    background: green;
+    background: rgb(130, 162, 16);
     height: 100px;
     width: 100px;
     margin: 10px;
@@ -90,4 +90,8 @@ table tbody tr{
 }
 .gray:focus {
     color: black;
+}
+
+#error_explanation {
+    color: red;
 }

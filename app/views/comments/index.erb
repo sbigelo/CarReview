@@ -1,4 +1,6 @@
-<% if @review %>
+<% if @comments.nil? %>
+    <h1>No comments made yet!</h1>
+<% elsif @review %>
     <h1>Comments for <%= @review.title %></h1>
 <% else %>
     <h1>All Comments</h1>
