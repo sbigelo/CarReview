@@ -3,7 +3,8 @@ class Review < ApplicationRecord
   # belongs_to :car
   has_many :comments
   has_many :users, through: :comments
-  validates :content, :title, presence: true
+  validates :content, presence: true
+  validates  :title, presence: true
 
   scope :abc, -> {order(:title)}
   scope :most_comments, -> {left_outer_joins(:comments).group('reviews.id').order('count(reviews.id) desc')}
