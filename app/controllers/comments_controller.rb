@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :set_comment, only: [:show, :edit, :update]
+    before_action :redirect_if_not_comment_author, only: [:edit, :update]
     
     def index
         if params[:review_id] && @review = Review.find_by_id(params[:review_id])
@@ -59,9 +60,8 @@ class CommentsController < ApplicationController
         end
     end
 
-    
-
-
-
+    def redirect_if_not_comment_author
+        redirect_to comments_path if @comment.user != current_user
+    end
 
 end
