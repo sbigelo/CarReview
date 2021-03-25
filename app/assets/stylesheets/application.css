@@ -94,3 +94,8 @@ table tbody tr{
 #error_explanation {
     color: red;
 }
+
+.red {
+    color: red;
+    font-size: 32px;
+}
