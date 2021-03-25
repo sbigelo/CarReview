@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
     end
 
     def show
-        @comment = Comment.find_by_id(params[:id])
+       
     end
 
     def edit
@@ -55,8 +55,7 @@ class CommentsController < ApplicationController
     def set_comment
         @comment = Comment.find_by_id(params[:id])
         if !@comment
-            flash[:message] = "Comment was not found"
-            # redirect_to comments_path
+            redirect_to comments_path, flash: {error: "Comment was not found"}
         end
     end
 

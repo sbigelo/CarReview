@@ -1,5 +1,5 @@
 <%= index_head %>
-<%= flash[:error] if flash[:error] %>
+<div class="red"><%= error %></div>
 <% if @reviews.blank? %>
 <h2>No Reviews yet. Write one <%= link_to "here:", new_review_path %></h2>
 <% else %>
