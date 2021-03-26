@@ -4,19 +4,19 @@ class CommentsController < ApplicationController
     before_action :redirect_if_not_comment_author, only: [:edit, :update]
     
     def index
-        if params[:review_id] && @review = Review.find_by_id(params[:review_id])
+        if review_find_by
             @comments = @review.comments
         else
-            @error = "That review does not exist." if params[:review_id]
-            @comments = Comment.all
+            review_doesnt_exist
+            @comments = Comment.abc
         end
     end
 
     def new
-        if params[:review_id] && @review = Review.find_by_id(params[:review_id])
+        if review_find_by
              @comment = @review.comments.build
         else
-            @error = "That review does not exist." if params[:review_id]
+            review_doesnt_exist
             @comment = Comment.new
         end
     end
@@ -60,8 +60,16 @@ class CommentsController < ApplicationController
         end
     end
 
+    def review_find_by
+        params[:review_id] && @review = Review.find_by_id(params[:review_id])
+    end
+
     def redirect_if_not_comment_author
         redirect_to comments_path if @comment.user != current_user
+    end
+
+    def review_doesnt_exist
+        @error = "That review does not exist." if params[:review_id]
     end
 
 end
