@@ -36,9 +36,9 @@ class ReviewsController < ApplicationController
 
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @reviews = @user.reviews.abc
+            @reviews = @user.reviews
         else
-            @reviews = Review.most_comments
+            @reviews = Review.top_comments
         end
     end
 
@@ -47,12 +47,6 @@ class ReviewsController < ApplicationController
         if !@review
             redirect_to reviews_path, flash: {error: "That review does not exist."}
         end
-    end
-
-    def destroy
-     @review = Review.find(params[:id])
-     @review.destroy
-         session.delete(:user_id)
     end
 
 

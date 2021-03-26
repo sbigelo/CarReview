@@ -9,11 +9,11 @@
 <% @reviews.each do |t|%>
 <tr>
 <td><%= link_to t.title, review_path(t) %> - By: <%= link_to t.user.username, user_path(t.user) %> -</td>
+<td> <%= pluralize((t.comments.size), 'Comment') %></td>
 <td> </td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td><%= pluralize((t.comments.size), 'Comment') %></td>
 </tr>
 
 
