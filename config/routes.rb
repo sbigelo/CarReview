@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
   
   resources :comments
+  
   resources :users do 
     resources :reviews, shallow: true
   end

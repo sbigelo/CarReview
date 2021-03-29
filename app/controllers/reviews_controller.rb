@@ -49,6 +49,12 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+        find_review
+        @review.destroy
+        redirect_to reviews_path, flash: {error: "Successfully deleted review."}
+    end
+
 
     private
 

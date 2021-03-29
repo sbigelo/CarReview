@@ -5,7 +5,8 @@
 
 
 <% if @review.user == current_user %>
-  <%= link_to "Edit Review", edit_review_path(@review)%>
+  <%= link_to "Edit Review", edit_review_path(@review)%><br><br>
+  <%= link_to "Delete Review", review_path(@review), method: :delete%>
 <% end %>
 <p><%= link_to "Add a new Comment", new_review_comment_path(@review) %></p><br>
 <% if !@review.comments.empty? %>
