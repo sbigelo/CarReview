@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
     validates :content, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }
     validates :review, uniqueness: {scope: :user_id, message: "comment can only have one comment per person."}
 
-    scope :abc, -> {order(:user)}
+    scope :comment_created_at_order, -> {order(:created_at)}
 
 end
 
