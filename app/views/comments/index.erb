@@ -10,7 +10,7 @@
 
 <ul>
 <% @comments.each do |t| %>
-   <p><%= t.user.username %> says "<%= t.content %>" about this review: <%= link_to t.review.title, review_path(t.review_id)%></p>
+   <p><%= t.user.username %> says: <div class="small">"<%= t.content %>"</div> about this review: <%= link_to t.review.title, review_path(t.review_id)%></p><br>
 
 <% end %>
 </ul>

@@ -99,3 +99,7 @@ table tbody tr{
     color: red;
     font-size: 32px;
 }
+
+.small {
+    color: rgb(255, 0, 0);
+}

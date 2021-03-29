@@ -11,8 +11,8 @@ module ReviewsHelper
     end
 
     def index_head
-        if @user
-            content_tag(:h1, "#{@user.username}'s Reviews:")
+        if @user == current_user
+            content_tag(:h1, "Here are your Reviews:")
         else
             content_tag(:h1, "All Reviews")
       end
