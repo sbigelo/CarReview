@@ -55,7 +55,7 @@ class CommentsController < ApplicationController
 
     def set_comment
         @comment = Comment.find_by_id(params[:id])
-        if !@comment
+        if !@comment || !@comment.user == current_user
             redirect_to comments_path, flash: {error: "Comment was not found"}
         end
     end

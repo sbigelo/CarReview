@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        @review = Review.find(params[:id])
+        find_review
         redirect_if_not_current_user
     end
 
