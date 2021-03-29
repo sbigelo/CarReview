@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
             @comments = @review.comments
         else
             review_doesnt_exist
-            @comments = Comment.abc
+            @comments = Comment.all
         end
     end
 
@@ -54,7 +54,7 @@ class CommentsController < ApplicationController
     end
 
     def set_comment
-        @comment = Comment.find_by_id(params[:id])
+        @comment = Comment.find_by(id: params[:id])
         if !@comment || !@comment.user == current_user
             redirect_to comments_path, flash: {error: "Comment was not found"}
         end
@@ -65,7 +65,7 @@ class CommentsController < ApplicationController
     end
 
     def redirect_if_not_comment_author
-        redirect_to comments_path if @comment.user != current_user
+        redirect_to comments_path, flash: {error: "You must be the creator of the comment to do that."} if @comment.user != current_user
     end
 
     def review_doesnt_exist

@@ -61,7 +61,7 @@ class ReviewsController < ApplicationController
     end
 
     def redirect_if_not_current_user
-        redirect_to reviews_path if !@review || @review.user != current_user
+        redirect_to reviews_path, flash: {error: "You must be the creator of the review to do that."} if !@review || @review.user != current_user
     end
 
     def find_review
