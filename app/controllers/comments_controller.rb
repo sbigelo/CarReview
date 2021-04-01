@@ -74,7 +74,7 @@ class CommentsController < ApplicationController
     end
 
     def review_doesnt_exist
-        @error = "That review does not exist." if params[:review_id]
+        flash[:error] = "That review does not exist." if params[:review_id]
     end
 
 end
