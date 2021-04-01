@@ -38,6 +38,7 @@ class ReviewsController < ApplicationController
         if find_params
             @reviews = @user.reviews
         else
+            flash[:error] = "That user doesn't exist." if params[:user_id]
             @reviews = Review.top_comments
         end
     end
