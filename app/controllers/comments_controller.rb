@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
             @comments = @review.comments
         else
             review_doesnt_exist
-            @comments = Comment.comment_created_at_order
+            @comments = Comment.new_comment_created_at_order
         end
     end
 

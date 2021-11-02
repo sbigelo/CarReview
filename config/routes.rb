@@ -16,8 +16,10 @@ Rails.application.routes.draw do
     resources :comments
   end
   
+  resources :cars
+
   resources :comments
-  
+
   resources :users do 
     resources :reviews, shallow: true
   end
