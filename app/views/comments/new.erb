@@ -1,0 +1,13 @@
+<div class="red"><%= error %></div>
+<% if @comment.review %>
+<h1>Comment for <%= @comment.review.title %></h1>
+<% else %>
+<h1>New Comment</h1>
+<% end %>
+
+<%= render partial: "layouts/errors", locals: {object: @comment} %>
+
+
+
+<%= render partial: "comments/form" %>
+

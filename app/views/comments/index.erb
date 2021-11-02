@@ -1,0 +1,16 @@
+<div class="red"><%= error %></div>
+
+<% if @comments.nil? %>
+    <h1>No comments made yet!</h1>
+<% elsif @review %>
+    <h1>Comments for <%= @review.title %></h1>
+<% else %>
+    <h1>All Comments</h1>
+<% end %>
+
+<ul>
+<% @comments.each do |t| %>
+   <p><%= t.user.username %> says: <div class="small">"<%= t.content %>"</div> about this review: <%= link_to t.review.title, review_path(t.review_id)%></p><br>
+
+<% end %>
+</ul>

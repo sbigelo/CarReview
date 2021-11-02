@@ -1,0 +1,10 @@
+<div class="red"><%= error %></div>
+
+<h2>"<%= @comment.content%>" - <%= @comment.user.username%></h2>
+
+<% if @comment.user == current_user %>
+  <%= link_to "Edit Comment", edit_comment_path(@comment)%><br>
+  <%= link_to "Delete Comment", comment_path(@comment), method: :delete %>
+<% end %>
+
+<h4>Read the review here: <%= link_to @comment.review.title, review_path(@comment.review_id) %></h4>

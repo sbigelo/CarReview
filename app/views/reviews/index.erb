@@ -1,0 +1,21 @@
+<%= index_head %>
+<div class="red"><%= error %></div>
+<% if @reviews.blank? %>
+<h2>No Reviews yet. Write one <%= link_to "here", new_review_path %></h2>
+<% else %>
+
+<table>
+<tbody>
+<% @reviews.each do |t|%>
+<tr>
+<td><%= link_to t.title, review_path(t) %> - By: <%= link_to t.user.username, user_path(t.user) %> - </td>
+<td> <%= pluralize((t.comments.size), 'Comment') %></td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<% end %>
+<% end %>
+</tbody>
+</table>

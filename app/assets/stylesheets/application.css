@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .home {
+     text-align: center;
+     font-family: unset;
+ }
+
+ .home a:visited { 
+    text-decoration: none; 
+    color: black; 
+}
+
+ .home a {
+     font-size: 90px;
+     text-decoration:none;
+ }
+
+.welcome {
+    text-align: center;
+}
+
+body {
+    background-color: rgb(105, 222, 214);
+    text-align: center;
+}
+
+body .links a{
+
+  border: 2px solid #030403;
+  padding: 8px;
+  text-align: right;
+  font-size: 18px;
+  
+}
+
+body .link {
+    background: rgb(130, 162, 16);
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+   
+}
+
+.content {
+  resize: none;
+  margin-left: 33.3%;
+  padding: 8px;
+  border: 2px solid #030403;
+  height: auto;
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+}
+
+html, body {
+        width: 100%;
+}
+
+table tbody tr{
+ margin: 0;
+  height: 7vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxem {
+    margin-left: 33.3%;
+    margin-right: 33.3%;
+}
+
+.gray {
+    color: rgb(174, 174, 174);
+}
+.gray:focus {
+    color: black;
+}
+
+#error_explanation {
+    color: red;
+}
+
+.red {
+    color: red;
+    font-size: 32px;
+}
+
+.small {
+    color: rgb(255, 0, 0);
+}
