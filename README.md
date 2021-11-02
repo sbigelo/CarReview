@@ -8,3 +8,4 @@ This application allows users to create reviews about cars and comment on other 
 2. Type bundle install in the command line.
 3. Type 'rake:db migrate' to migrate the tables.
 4. Type 'rails s' inot the command line to start up your local server.
+5. Put 'http://127.0.0.1:3000' into your browser.
