@@ -1,18 +1,16 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.link:visited{
+    text-decoration:none;
+    color: black; 
+}
+
+.link {
+    text-decoration:none;
+}
+
+.link:hover {
+ background: #71b406;
+    border-color: #71b406;
+}
 
  .home {
      text-align: center;
@@ -29,12 +27,16 @@
      text-decoration:none;
  }
 
+ .home a:hover {
+    color: rgb(16, 111, 11);
+ }
+
 .welcome {
     text-align: center;
 }
 
 body {
-    background-color: rgb(105, 222, 214);
+    background-color: rgb(159, 157, 165);
     text-align: center;
 }
 
@@ -101,5 +103,31 @@ table tbody tr{
 }
 
 .small {
-    color: rgb(255, 0, 0);
+    color: rgb(172, 6, 6);
+}
+
+
+.new_comment {
+    align-content: center;
+} 
+
+ input[type='submit'] {
+border: none;
+	background: #3a7999;
+	color: #f2f2f2;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 500ms ease; 
+}
+
+ input:hover[type='submit'] {
+    background: #71b406;
+    border-color: #71b406;
+}
+
+.new_review {
+    align-content: center;
 }

@@ -1,7 +1,6 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(object.errors.count, "error") %> prohibited this from being saved:</h2>
-
     <div>
     <% object.errors.full_messages.each_with_index do |msg, i| %>
       <h2><%=i+1%>. <%= msg %></h2>

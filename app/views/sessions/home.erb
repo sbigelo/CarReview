@@ -1,7 +1,12 @@
 <div class="red"><%= error %></div>
+<% if logged_in? %>
+<h1 class="welcome">Welcome back, <%= current_user.username %></h1><br><br>
+<% else %>
 <h1 class="welcome">Welcome to Car Reviews!</h1><br><br>
+<% end %>
 <h3>Here you can write reviews on your favorite cars and see what others have to say about them as well.</h3><br><br>
 <% if !logged_in? %>
 <h3>To get involved, log in or sign up above.</h3>
 <% end %>
+<img src='https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d28971e34a5c400084b299e%2FNew-car-dealer%2F960x0.jpg%3Ffit%3Dscale'>
 
