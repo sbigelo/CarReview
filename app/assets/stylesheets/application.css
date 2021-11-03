@@ -59,8 +59,12 @@ body .link {
 }
 
 .content {
-  resize: none;
-  margin-left: 33.3%;
+     display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    font-weight: bold;
   padding: 8px;
   border: 2px solid #030403;
   height: auto;

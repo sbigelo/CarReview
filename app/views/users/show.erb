@@ -13,10 +13,17 @@
 <% if t.comments.blank? %>
 <p>There aren't any Comments for the <%=t.title%> yet. Add a comment <%= link_to "here", new_review_comment_path(t) %></p>
 <% else %>
-<%= link_to "See all comments for the #{t.title}", comments_path%>
+<%= link_to "See all comments for the #{t.title}", review_comments_path(t)%>
 <br><br>
+
 <% end %>
 <% end %>
+
+
+<%# <% @comments.each do |t| %>
+   <%# <p><%= t.user.username %> 
+   <%# says: <div class="small">"<%= t.content %>
+   <%# "</div> about this review: <%= link_to t.review.title, review_path(t.review_id)%>
 
 
 
