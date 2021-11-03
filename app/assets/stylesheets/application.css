@@ -36,8 +36,9 @@
 }
 
 body {
-    background-color: rgb(159, 157, 165);
     text-align: center;
+    background-color: rgb(233, 233, 233);
+    
 }
 
 body .links a{

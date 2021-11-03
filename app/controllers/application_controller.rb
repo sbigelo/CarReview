@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
 
     def redirect_if_not_logged_in
        redirect_to root_path, flash: {error: "You must be logged in first."} if !logged_in?
-
     end
+    
 
 
 end
